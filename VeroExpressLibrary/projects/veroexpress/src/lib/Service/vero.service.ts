@@ -6,4 +6,10 @@ import { Injectable } from '@angular/core';
 export class VeroService {
 
   constructor() { }
+
+  Infor(){
+
+    alert("Vero is working");
+
+  }
 }
