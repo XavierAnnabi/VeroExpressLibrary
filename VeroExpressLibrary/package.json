@@ -8,7 +8,29 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "VeroExpressBuild": "ng build Veroexpress"
+    "VeroExpressBuild": "ng build Veroexpress",
+
+    
+    
+    
+"copy-styles": "cpx \"./projects/Veroexpress/src/lib/assets/**/*\" \"./dist/Veroexpress/assets\" ",
+
+
+    
+    "copy-styles00": "cpx \"./projects/Veroexpress/src/lib/assets/**/*\" \"./dist/Veroexpress/assets\" && scss-bundle -e ./projects/Veroexpress/src/lib/assets/style.css -d ./dist/Veroexpress/assets/style.css",
+    "cp-Veroexpress-assets": "cpx \"./src/assets/**/*\" \"./dist/Veroexpress/assets\"",
+
+
+    "clean": "rimraf \"./dist/*\"",
+    "scss-bundle": "scss-bundle -e \"./Veroexpress/src/styles/_framework.scss\" -d \"./dist/Veroexpress/styles/_framework.scss\"",
+    "watch-ts": "ng build Veroexpress --watch=true",
+    "watch-scss": "cpx \"./Veroexpress/src/styles/**/*\" \"./dist/Veroexpress/styles\" --watch --verbose",    
+    "watch-assets": "cpx \"./Veroexpress/src/assets/**/*\" \"./dist/Veroexpress/assets\"  --watch --verbose",
+    "watchAll": "npm run clean & concurrently \"npm:watch-*\"",
+
+    "postbuild": "ts-node ./scripts/css-bundle.ts"
+
+
   },
   "private": true,
   "dependencies": {
@@ -24,6 +46,7 @@
     "@angular/router": "~7.2.0",
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
+    "cpx": "^1.5.0",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

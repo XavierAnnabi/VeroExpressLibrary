@@ -7,6 +7,9 @@ import { ToastComponent } from './Ui/toast/toast.component';
 import { SharedModuleModule } from './Shared/shared-module/shared-module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { PanelComponent } from './Ui/panel/panel.component';
+import { VeroDirectiveModule } from './vero-directive/vero-directive.module';
+
 
 
 @NgModule({
@@ -16,23 +19,26 @@ import { CommonModule } from '@angular/common';
      GridViewComponent, 
      LookUpComponent, 
      ContextMenuComponent, 
-     ToastComponent
+     ToastComponent,
+      PanelComponent
     ],
   imports: [
     CommonModule,
     HttpClientModule,
-    SharedModuleModule
+    SharedModuleModule,
+    VeroDirectiveModule
   ],
   exports: [
     
     VeroexpressComponent,
-
+    PanelComponent,
     GridViewComponent, 
     LookUpComponent, 
     ContextMenuComponent, 
     ToastComponent,
   
-    SharedModuleModule
+    SharedModuleModule,
+    VeroDirectiveModule
   ]
 })
 export class VeroexpressModule { }
